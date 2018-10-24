@@ -1,0 +1,26 @@
+[Unit]
+Description=NodeHost's distributed currency daemon
+After=network.target
+
+[Service]
+User=nodehost
+Group=nodehost
+
+Type=forking
+PIDFile=/var/lib/nodehostd/nodehostd.pid
+
+ExecStart=/usr/bin/nodehostd -daemon -pid=/var/lib/nodehostd/nodehostd.pid \
+          -conf=/etc/nodehost/nodehost.conf -datadir=/var/lib/nodehostd
+
+ExecStop=-/usr/bin/nodehost-cli -conf=/etc/nodehost/nodehost.conf \
+         -datadir=/var/lib/nodehostd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

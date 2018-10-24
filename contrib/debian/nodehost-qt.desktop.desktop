@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=NodeHost
+Comment=NodeHost P2P Cryptocurrency
+Exec=nodehost-qt %u
+Terminal=false
+Type=Application
+Icon=nodehost128
+MimeType=x-scheme-handler/nodehost;
+Categories=Office;Finance;
+Name[en_US]=nodehost-qt.desktop

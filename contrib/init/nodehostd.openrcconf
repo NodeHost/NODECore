@@ -1,0 +1,26 @@
+# /etc/conf.d/nodehostd: config file for /etc/init.d/nodehostd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/nodehost/nodehost.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/nodehostd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/nodehostd.pid"
+
+# Where to write nodehostd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/nodehostd"
+
+# User and group to own nodehostd process
+#BITCOIND_USER="nodehost"
+#BITCOIND_GROUP="nodehost"
+
+# Path to nodehostd executable
+#BITCOIND_BIN="/usr/bin/nodehostd"
+
+# Nice value to run nodehostd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""
