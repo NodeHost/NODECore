@@ -547,11 +547,6 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
 
             uint256 hash;
             while (true) {
-
-                // To avoid 100% CPU when first POS starts after POW
-                if (chainActive.Tip()->nHeight >= Params().LAST_POW_BLOCK())
-                    return;
-
                 hash = pblock->GetHash();
                 if (hash <= hashTarget) {
                     // Found a solution

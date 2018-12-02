@@ -529,8 +529,6 @@ std::string LicenseInfo()
            "\n" +
            FormatParagraph(strprintf(_("Copyright (C) 2015-%i The PIVX Core Developers"), COPYRIGHT_YEAR)) + "\n" +
            "\n" +
-           FormatParagraph(strprintf(_("Copyright (C) 2017-%i The Bitcoin Green Core Developers"), COPYRIGHT_YEAR)) + "\n" +
-           "\n" +
            FormatParagraph(strprintf(_("Copyright (C) 2018-%i The NodeHost Core Developers"), COPYRIGHT_YEAR)) + "\n" +
            "\n" +
            FormatParagraph(_("This is experimental software.")) + "\n" +

@@ -1,4 +1,5 @@
 // Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2018 The NodeHost developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -478,8 +479,8 @@ bool MultisigDialog::createMultisigTransaction(vector<CTxIn> vUserIn, vector<CTx
         CAmount fee = ::minRelayTxFee.GetFee(nBytes);
 
         if(tx.vout.at(changeIndex).nValue > fee){
-           tx.vout.at(changeIndex).nValue -= fee;
-           feeStringRet = strprintf("%d",((double)fee)/COIN).c_str();
+            tx.vout.at(changeIndex).nValue -= fee;
+            feeStringRet = strprintf("%d",((double)fee)/COIN).c_str();
         }else{
             throw runtime_error("Not enough NODE provided to cover fee");
         }
@@ -501,7 +502,7 @@ void MultisigDialog::on_signButton_clicked()
 {
     if(!model)
         return;
-   try{
+    try{
         //parse tx hex
         CTransaction txRead;
         if(!DecodeHexTx(txRead, ui->transactionHex->text().toStdString())){

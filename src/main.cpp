@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2018 The NodeHost developers
+// Copyright (c) 2018 The NodeHost developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -2086,9 +2086,8 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
 
             std::vector<CScriptCheck> vChecks;
             unsigned int flags = SCRIPT_VERIFY_P2SH | SCRIPT_VERIFY_DERSIG;
-            //if checkinput fails AND checkpoint does not exists, returns false 
-            if ((!CheckInputs(tx, state, view, fScriptChecks, flags, false, nScriptCheckThreads ? &vChecks : NULL))
-		        && (!Checkpoints::CheckBlock(pindex->nHeight, *pindex->phashBlock)))
+            if (!CheckInputs(tx, state, view, fScriptChecks, flags, false, nScriptCheckThreads ? &vChecks : NULL))
+                if (!Checkpoints::CheckBlock(pindex->nHeight, *pindex->phashBlock))
                     return false;
             control.Add(vChecks);
         }
@@ -2115,8 +2114,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
 
     //PoW phase redistributed fees to miner. PoS stage destroys fees.
     CAmount nExpectedMint = GetBlockValue(pindex->pprev->nHeight);
-    // TODO: enable nExpectedMint without waiting for block 260k fork !!!!!
-    if (block.IsProofOfWork() || Params().NetworkID() != CBaseChainParams::MAIN || chainActive.Height() >= SOFT_FORK_VERSION_120)
+    if (block.IsProofOfWork())
         nExpectedMint += nFees;
 
     //Check that the block does not overmint
@@ -5237,9 +5235,6 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
 //       it was the one which was commented out
 int ActiveProtocol()
 {
-    if (chainActive.Tip()->nHeight+1 >= 4500)
-        return MIN_PEER_PROTO_VERSION_BLOCK4500;
-
     return MIN_PEER_PROTO_VERSION;
 }
 

@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2018 The NodeHost developers
+// Copyright (c) 2018 The NodeHost developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -1713,7 +1713,7 @@ UniValue walletpassphrase(const UniValue& params, bool fHelp)
     // TODO: get rid of this .c_str() by implementing SecureString::operator=(std::string)
     // Alternately, find a way to make params[0] mlock()'d to begin with.
     strWalletPass = params[0].get_str().c_str();
-    
+
     bool stakingOnly = false;
     if (params.size() == 3)
         stakingOnly = params[2].get_bool();
