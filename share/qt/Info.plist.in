@@ -31,6 +31,12 @@
   <key>CFBundleExecutable</key>
   <string>NodeHost-Qt</string>
 
+  <key>CFBundleName</key>
+  <string>NodeHost-Qt</string>
+
+  <key>LSHasLocalizedDisplayName</key>
+  <true/>
+
   <key>CFBundleIdentifier</key>
   <string>online.nodehost.NodeHost-Qt</string>
 

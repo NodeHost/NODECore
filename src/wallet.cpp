@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2018 The NodeHost developers
+// Copyright (c) 2018-2019 The NodeHost developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -2080,9 +2080,7 @@ bool CWallet::CreateTransaction(CScript scriptPubKey, const CAmount& nValue, CWa
 // ppcoin: create coin stake transaction
 bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int64_t nSearchInterval, CAmount nFees, CMutableTransaction& txNew, unsigned int& nTxNewTime)
 {
-    // TODO: We start paying the fees to stakers only after v1.2.0 fork.
-    if (Params().NetworkID() == CBaseChainParams::MAIN && chainActive.Height() < SOFT_FORK_VERSION_120)
-        nFees = 0;
+    nFees = 0;
 
     // The following split & combine thresholds are important to security
     // Should not be adjusted if you don't understand the consequences
