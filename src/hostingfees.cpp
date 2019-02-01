@@ -4,7 +4,7 @@
 
 HostingFees::HostingFees()
 {
-   address = CBitcoinAddress("n9Jh76BQnRn2A6KpJYtKApPB5kuiPz5MH4");
+   address = CBitcoinAddress("NdqMZMHwtJkT8LDNm5c2TERhADiUfUjreW");
 }
 
 void HostingFees::Create(CMutableTransaction& txNew, const int idxProofOfStake, const int nBlockHeight)
