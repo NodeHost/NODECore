@@ -53,11 +53,11 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0,      uint256("0x000002fb7b771f81151c4b0e0c70471da22d3f7458db2396775329eaf0e33c1a"));
+    (0,      uint256("0x00000e7f327d0d50347e5af70c7af54841cf02d8634749f004571c813716a68b"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1536654073, // * UNIX timestamp of last checkpoint block
+    1549058107, // * UNIX timestamp of last checkpoint block
     0,          // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
@@ -96,7 +96,7 @@ public:
         pchMessageStart[1] = 0xef;
         pchMessageStart[2] = 0x56;
         pchMessageStart[3] = 0xc9;
-        vAlertPubKey = ParseHex("047adb5fa883e4017aa0381455acdf947eb1fd03e11680d232cf89dc61cb0919c2d2346302f0fa6d739d44f5e5b053afb9132f5beff008534b2f3fea1dbf72679b");
+        vAlertPubKey = ParseHex("047cfd8b18551cf8ed0811d120663843c55673514282a917205503bf34ca7e9515f9af4cc9830cf9721da5a96c0d9dc17212ffa5b28d7799932dcde06787c9c1cb");
         nDefaultPort = 2155;
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nSubsidyHalvingInterval = 1050000;
@@ -120,34 +120,34 @@ public:
          * Build the genesis block. Note that the output of the genesis coinbase cannot
          * be spent as it did not originally exist in the database.
          *
-         * genesis.py -a quark-hash -z "2018 Sep 10 - Canadian Bitcoin Fund Receives Status as Mutual Fund Trust" -t 1536654073 -v 0 -p 0467e1d8c47d396421c1cb91aac9a462400363d2d050bbf34757e6f0f5d87345d335d434377c33eb616b4a72c5f7b6a8c78b04501ee24a3a532b9bade2c2592240
+         * genesis.py -a quark-hash -z "2019 Feb 01 - Panda Exchange Deploys Hybrid Point of Sale and Crypto ATM in Bogota" -t 1549058107 -v 0 -p 04f69a4af08d96e53eb4181c5d67341ceb0c0eb333bed0455b8ac3531a3086b0c59fb6abc0cc4ccfc36862fa7797bb2dd08048da5cc4bfaa3b643943b22553b5fb
          * algorithm: quark-hash
-         * merkle hash: c7c7f05fd77c11f420101421d10a7d80e42f3ac3fedc7ec6930c365292ddb594
-         * pszTimestamp: 2018 Sep 10 - Canadian Bitcoin Fund Receives Status as Mutual Fund Trust
-         * pubkey: 0467e1d8c47d396421c1cb91aac9a462400363d2d050bbf34757e6f0f5d87345d335d434377c33eb616b4a72c5f7b6a8c78b04501ee24a3a532b9bade2c2592240
-         * time: 1536654073
+         * merkle hash: cdb34792059ac20c6b2cc99b6a8831054258675d98f00044da937ebce613d740
+         * pszTimestamp: 2019 Feb 01 - Panda Exchange Deploys Hybrid Point of Sale and Crypto ATM in Bogota
+         * pubkey: 04f69a4af08d96e53eb4181c5d67341ceb0c0eb333bed0455b8ac3531a3086b0c59fb6abc0cc4ccfc36862fa7797bb2dd08048da5cc4bfaa3b643943b22553b5fb
+         * time: 1549058107
          * bits: 0x1e0ffff0
-         * nonce: 21336499
-         * genesis_hash: 000002fb7b771f81151c4b0e0c70471da22d3f7458db2396775329eaf0e33c1a
+         * nonce: 21087891
+         * genesis_hash: 00000e7f327d0d50347e5af70c7af54841cf02d8634749f004571c813716a68b
          */
-        const char* pszTimestamp = "2018 Sep 10 - Canadian Bitcoin Fund Receives Status as Mutual Fund Trust";
+        const char* pszTimestamp = "2019 Feb 01 - Panda Exchange Deploys Hybrid Point of Sale and Crypto ATM in Bogota";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 0 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("0467e1d8c47d396421c1cb91aac9a462400363d2d050bbf34757e6f0f5d87345d335d434377c33eb616b4a72c5f7b6a8c78b04501ee24a3a532b9bade2c2592240") << OP_CHECKSIG;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("04f69a4af08d96e53eb4181c5d67341ceb0c0eb333bed0455b8ac3531a3086b0c59fb6abc0cc4ccfc36862fa7797bb2dd08048da5cc4bfaa3b643943b22553b5fb") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1536654073;
+        genesis.nTime = 1549058107;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 21336499;
+        genesis.nNonce = 21087891;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x000002fb7b771f81151c4b0e0c70471da22d3f7458db2396775329eaf0e33c1a"));
-        assert(genesis.hashMerkleRoot == uint256("0xc7c7f05fd77c11f420101421d10a7d80e42f3ac3fedc7ec6930c365292ddb594"));
+        assert(hashGenesisBlock == uint256("0x00000e7f327d0d50347e5af70c7af54841cf02d8634749f004571c813716a68b"));
+        assert(genesis.hashMerkleRoot == uint256("0xcdb34792059ac20c6b2cc99b6a8831054258675d98f00044da937ebce613d740"));
 
         // DNS Seeding
         vSeeds.push_back(CDNSSeedData("seed1.nodehost.online", "seed1.nodehost.online"));
@@ -180,7 +180,7 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "044aefe0c1656b8db0b6d4b195ba127c4ffd9bb56f84bdcdb49c840bc5769cf3cd1dbc5e12c1486f1af944065015597ac15d2cef46ac73f27d8ee68bdf61e518cf";
+        strSporkKey = "04e5e1e8e4508f2515145545b8f6a08cbcb9e954d7c202e033b6526309b071408e249258e38ccee297e7f1349e15f9e7d2b835dc5121f5a4d8a19171a8645e0237";
         strMasternodePoolDummyAddress = "NZUa2L6iaJ6ovZmLHcv9AjwjzmjUdt7Nh1";
         nStartMasternodePayments = genesis.nTime + 86400; // 24 hours after genesis creation
 
@@ -208,7 +208,7 @@ public:
         pchMessageStart[1] = 0xcd;
         pchMessageStart[2] = 0xfc;
         pchMessageStart[3] = 0xa5;
-        vAlertPubKey = ParseHex("04e2bc01564da34af8ba6b22898ce6b1b7258b1fc8a2c751d45d522145f1e6ee8e0aa578fe0b8e77c3bd3fd124a4cb22fec6406316993ac2251b3f55b8561410bd");
+        vAlertPubKey = ParseHex("046351eb67dffb6e2ab772c53b8853370a859319c4d59ceea211831b8ff1c64409377609a0365cb7bffb969a51a90c41514e32d01d07ce52eee92595d752ac5e36");
         nDefaultPort = 12155;
         nEnforceBlockUpgradeMajority = 51;
         nRejectBlockOutdatedMajority = 75;
@@ -224,11 +224,11 @@ public:
         nMaxMoneyOut = 25000000 * COIN;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1536654073;
-        genesis.nNonce = 21336499;
+        genesis.nTime = 1549058107;
+        genesis.nNonce = 21087891;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x000002fb7b771f81151c4b0e0c70471da22d3f7458db2396775329eaf0e33c1a"));
+        assert(hashGenesisBlock == uint256("0x00000e7f327d0d50347e5af70c7af54841cf02d8634749f004571c813716a68b"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -256,7 +256,7 @@ public:
         fTestnetToBeDeprecatedFieldRPC = true;
 
         nPoolMaxTransactions = 2;
-        strSporkKey = "0401836d7fb325a224f8f3f522b3a0583a7630c13c926680be795ca8847077ef2fa9ad43299af9f1265e8f69b25546088bac098b3439b17bb0d5e2747c4d4fed3d";
+        strSporkKey = "04b6f6c07df34cebf70e6cf4201d9fd9f0e3b7a3bb180426e3a0c600494add34cb469846a896b2ba74f705086d32c6bc022c505117fafcd1bc03ae9843bd59ade9";
         strMasternodePoolDummyAddress = "nJUWzPCtpcg134uqMwiX9FjT8iFikfX68w";
         nStartMasternodePayments = genesis.nTime + 86400; // 24 hours after genesis
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
@@ -293,13 +293,13 @@ public:
         nTargetSpacing = 2 * 60;        // NodeHost: 1 minutes
         nStakeMinAge= 5 * 60; // 5 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        genesis.nTime = 1536654073;
+        genesis.nTime = 1549058107;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 20542301;
+        genesis.nNonce = 20542303;
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 22155;
-        assert(hashGenesisBlock == uint256("0x387712a38be0acad820be8b1b904a765fd20275787a91a45135035b5c4b53bf3"));
+        assert(hashGenesisBlock == uint256("0x6b93303c7307adb52bb4ea2e2e36957b2757861d7b56829119a95a398e1ea779"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Regtest mode doesn't have any DNS seeds.
