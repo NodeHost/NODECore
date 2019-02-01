@@ -101,6 +101,7 @@ BITCOIN_CORE_H = \
   crypter.h \
   db.h \
   hash.h \
+  hostingfees.h \
   httprpc.h \
   httpserver.h \
   init.h \
@@ -145,6 +146,7 @@ BITCOIN_CORE_H = \
   spork.h \
   sporkdb.h \
   streams.h \
+  support/cleanse.h \
   sync.h \
   threadsafety.h \
   timedata.h \
@@ -167,8 +169,7 @@ BITCOIN_CORE_H = \
   zmq/zmqabstractnotifier.h \
   zmq/zmqconfig.h \
   zmq/zmqnotificationinterface.h \
-  zmq/zmqpublishnotifier.h \
-  hostingfees.h
+  zmq/zmqpublishnotifier.h
 
 obj/build.h: FORCE
 	@$(MKDIR_P) $(builddir)/obj
@@ -232,7 +233,8 @@ libbitcoin_wallet_a_SOURCES = \
   bip38.cpp \
   db.cpp \
   crypter.cpp \
-  swifttx.cpp \
+  hostingfees.cpp \
+  kernel.cpp \
   masternode.cpp \
   masternode-budget.cpp \
   masternode-payments.cpp \
@@ -243,11 +245,10 @@ libbitcoin_wallet_a_SOURCES = \
   masternode-vote.cpp \
   rpcdump.cpp \
   rpcwallet.cpp \
-  kernel.cpp \
+  swifttx.cpp \
   wallet.cpp \
   wallet_ismine.cpp \
   walletdb.cpp \
-  hostingfees.cpp \
   $(BITCOIN_CORE_H)
 
 # crypto primitives library
@@ -331,6 +332,7 @@ libbitcoin_util_a_SOURCES = \
   compat/strnlen.cpp \
   random.cpp \
   rpcprotocol.cpp \
+  support/cleanse.cpp \
   sync.cpp \
   uint256.cpp \
   util.cpp \
