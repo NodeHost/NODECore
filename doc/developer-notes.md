@@ -204,7 +204,7 @@ to see it.
 
 ### Testnet and Regtest modes
 
-Run with the `-testnet` option to run with "play BITGs (tBITG)" on the test network, if you
+Run with the `-testnet` option to run with "play NODEs (tNODE)" on the test network, if you
 are testing multi-machine code that needs to operate across the internet.
 
 If you are testing something that can run on one machine, run with the `-regtest` option.
