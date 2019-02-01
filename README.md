@@ -16,7 +16,7 @@ More information at [nodehost.online](https://nodehost.online)
 |-----------------------------|-----------------|
 | Block Time                  | 60 Seconds      |
 | Max Coin Supply             | 25,000,000 NODE |
-| Premine                     | 2,000,000 NODE  |
+| Premine                     | 720,000 NODE    |
 
 ### Reward Distribution
 
