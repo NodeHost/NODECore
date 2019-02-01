@@ -453,8 +453,7 @@ void CCommunityVoteManager::ProcessMessage(CNode* pfrom, std::string& strCommand
                     Misbehaving(pfrom->GetId(), 20);
                     return;
                 }
-                if (mnodeman.CountEnabled() > 0)
-                    pfrom->FulfilledRequest("mncvs");
+                pfrom->FulfilledRequest("mncvs");
             }
         }
 

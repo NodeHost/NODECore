@@ -352,7 +352,8 @@ UniValue sendtoaddress(const UniValue& params, bool fHelp)
         throw runtime_error(
             "sendtoaddress \"nodeaddress\" amount ( \"comment\" \"comment-to\" )\n"
             "\nSend an amount to a given address. The amount is a real and is rounded to the nearest 0.00000001\n" +
-            HelpRequiringPassphrase() +
+            HelpRequiringPassphrase() + "\n"
+
             "\nArguments:\n"
             "1. \"nodeaddress\"  (string, required) The node address to send to.\n"
             "2. \"amount\"      (numeric, required) The amount in btc to send. eg 0.1\n"
@@ -697,6 +698,7 @@ UniValue getbalance(const UniValue& params, bool fHelp)
 
             "\nResult:\n"
             "amount              (numeric) The total amount in NODE received for this account.\n"
+
             "\nExamples:\n"
             "\nThe total amount in the server across all accounts\n" +
             HelpExampleCli("getbalance", "") +
@@ -1006,7 +1008,8 @@ UniValue addmultisigaddress(const UniValue& params, bool fHelp)
             "\nExamples:\n"
             "\nAdd a multisig address from 2 addresses\n" +
             HelpExampleCli("addmultisigaddress", "2 \"[\\\"Xt4qk9uKvQYAonVGSZNXqxeDmtjaEWgfrs\\\",\\\"XoSoWQkpgLpppPoyyzbUFh1fq2RBvW6UK1\\\"]\"") +
-            "\nAs json rpc call\n" + HelpExampleRpc("addmultisigaddress", "2, \"[\\\"Xt4qk9uKvQYAonVGSZNXqxeDmtjaEWgfrs\\\",\\\"XoSoWQkpgLpppPoyyzbUFh1fq2RBvW6UK1\\\"]\""));
+            "\nAs json rpc call\n" +
+            HelpExampleRpc("addmultisigaddress", "2, \"[\\\"Xt4qk9uKvQYAonVGSZNXqxeDmtjaEWgfrs\\\",\\\"XoSoWQkpgLpppPoyyzbUFh1fq2RBvW6UK1\\\"]\""));
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 

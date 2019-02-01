@@ -1056,8 +1056,7 @@ void CBudgetManager::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
                     Misbehaving(pfrom->GetId(), 20);
                     return;
                 }
-                if (mnodeman.CountEnabled() > 0)
-                    pfrom->FulfilledRequest("mnvs");
+                pfrom->FulfilledRequest("mnvs");
             }
         }
 

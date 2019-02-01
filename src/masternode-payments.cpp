@@ -370,9 +370,7 @@ void CMasternodePayments::ProcessMessageMasternodePayments(CNode* pfrom, std::st
             }
         }
 
-        if (mnodeman.CountEnabled() > 0)
-            pfrom->FulfilledRequest("mnget");
-
+        pfrom->FulfilledRequest("mnget");
         masternodePayments.Sync(pfrom, nCountNeeded);
         LogPrint("mnpayments", "mnget - Sent Masternode winners to peer %i\n", pfrom->GetId());
     } else if (strCommand == "mnw") { //Masternode Payments Declare Winner
