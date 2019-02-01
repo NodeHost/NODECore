@@ -1,5 +1,5 @@
 NodeHost Core
-=====================
+=============
 
 Setup
 ---------------------
@@ -13,14 +13,14 @@ The following are some helpful notes on how to run NodeHost on your native platf
 
 Unpack the files into a directory and run:
 
-- bin/32/nodehost-qt (GUI, 32-bit) or bin/32/nodehostd (headless, 32-bit)
-- bin/64/nodehost-qt (GUI, 64-bit) or bin/64/nodehostd (headless, 64-bit)
+- `bin/nodehost-qt` (GUI) or
+- `bin/nodehostd` (headless)
 
 ### Windows
 
 Unpack the files into a directory, and then run nodehost-qt.exe.
 
-### OSX
+### macOS
 
 Drag NodeHost-Qt to your applications folder, and then run NodeHost-Qt.
 
@@ -32,7 +32,7 @@ Building
 ---------------------
 The following are developer notes on how to build NodeHost on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
-- [OSX Build Notes](build-osx.md)
+- [macOS Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
 - [Gitian Building Guide](gitian-building.md)
 
@@ -58,6 +58,6 @@ The NodeHost repo's [root README](https://github.com/NodeHost/NODECore/blob/mast
 
 License
 ---------------------
-Distributed under the [MIT/X11 software license](http://www.opensource.org/licenses/mit-license.php).
+Distributed under the [MIT software license](/COPYING).
 This product includes software developed by the OpenSSL Project for use in the [OpenSSL Toolkit](https://www.openssl.org/). This product includes
 cryptographic software written by Eric Young ([eay@cryptsoft.com](mailto:eay@cryptsoft.com)), and UPnP software written by Thomas Bernard.

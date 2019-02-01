@@ -25,7 +25,7 @@ If you're using the automated script (found in [contrib/gitian-build.sh](/contri
 Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
-    git clone https://github.com/nodehost/gitian.sigs.git
+    git clone https://github.com/NodeHost/gitian.sigs.git
     git clone https://github.com/NodeHost/NODECore-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
     git clone https://github.com/NodeHost/NODECore.git

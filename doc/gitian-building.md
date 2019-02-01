@@ -281,7 +281,7 @@ Clone the git repositories for nodehost and gitian and then checkout the nodehos
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/NodeHost/NODECore.git
+git clone https://github.com/NodeHost/NODECore.git nodehost
 cd nodehost
 git checkout v${VERSION}
 cd ..
