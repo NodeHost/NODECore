@@ -11,15 +11,15 @@
 
 BOOST_AUTO_TEST_SUITE(main_tests)
 
-CAmount nMoneySupplyPoWEnd = 2000000 * COIN;
+CAmount nMoneySupplyPoWEnd = 720000 * COIN;
 
 BOOST_AUTO_TEST_CASE(subsidy_limit_test)
 {
     CAmount nSum = 0;
     for (int nHeight = 0; nHeight < 1; nHeight += 1) {
-        /* premine in block 1 (2,000,000 NODE) */
+        /* premine in block 1 (720,000 NODE) */
         CAmount nSubsidy = GetBlockValue(nHeight);
-        BOOST_CHECK(nSubsidy <= 2000000 * COIN);
+        BOOST_CHECK(nSubsidy <= 720000 * COIN);
         nSum += nSubsidy;
     }
 
